@@ -14,20 +14,19 @@ import javax.swing.JOptionPane;
  * @author 20171148060029
  */
 public class Fila {
-
     int inicio;
     int fim;
     int tamanho;
     int qtdeElementos;
     int f[];
-
+   
     public Fila() {
         inicio = fim = -1;
         tamanho = 100;
         f = new int[tamanho];
         qtdeElementos = 0;
+    
     }
-
     public boolean estaVazia() {
         if (qtdeElementos == 0) {
             return true;
@@ -41,7 +40,6 @@ public class Fila {
         }
         return false;
     }
-
     public void adicionar(int e) {
         if (!estaCheia()) {
             if (inicio == -1) {
@@ -49,35 +47,29 @@ public class Fila {
             }
             fim++;
             f[fim] = e;
-            qtdeElementos++;
+            qtdeElementos++;            
         }
+        JOptionPane.showMessageDialog(null, "Ficha atual: " + e);
     }
-
     public void remover() {
         if (!estaVazia()) {
             inicio++;
             qtdeElementos--;
         }
     }
-
     public void mostrar() {
         String elementos = "";
         for (int i = inicio; i <= fim; i++) {
             elementos += f[i] + " - ";
         }
-        JOptionPane.showMessageDialog(null, elementos);
+        JOptionPane.showMessageDialog(null,"Todas chamadas: " + elementos);
     }
-
-
-
-
+    
     public static void main(String[] args) {
         Fila f = new Fila();
-        f.adicionar(10);
-        f.adicionar(12);
-        f.adicionar(30);
-        f.mostrar();
-        f.remover();
-        f.mostrar();
+        for (int i = 0; i < 10; i++) {
+            f.adicionar(i);
+        }
+           
     }
 }
