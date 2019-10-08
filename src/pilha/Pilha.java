@@ -16,9 +16,7 @@ public class Pilha {
  
     public Pilha() {
         this.posicaoPilha = -1;
-// indica que esta nula, vazia, pois posição um indica que contém informação
-        this.pilha = new Object[1000];
-// criando uma pilha com 1000 posições
+        this.pilha = new Object[100];
     }
  
     public boolean pilhaVazia() {
